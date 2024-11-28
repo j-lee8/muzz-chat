@@ -11,6 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        muzzPrimary: 'rgb(251, 64, 108)',
       },
     },
   },

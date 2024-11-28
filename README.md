@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Muzz Chat exercise
+This is the frontend implementation for Muzz Chat.
 
-## Getting Started
+The idea is to display a mobile view of the chat between two users ("sender" and "receiver"). Both a user and the receiver should be able to send
+messages to each other.
 
-First, run the development server:
+The conditions stipulate that messages separated by more than an hour should be sectioned with the date and time "{day} {timestamp}", and that messages from the same user sent within 20s of each other should have a smaller vertical spacing between them (making them look grouped together).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Tools
+ - NextJS 15 with App Router
+ - React 19 (RC)
+ - TailwindCSS
+ - Date-fns
+ - Jest
+ - React Testing Library
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Implementation
+- I followed the design as accurately as I could, and decided to add "Send" and "Receive" buttons next to the input so we could simulate the behaviour between sender and receiver in one window. Alternatives:
+    -   Mocking messages via Mock Service Worker (MSW) and returning these from a dummy endpoint (e.g., chat/{uuid} of the chat thread)
+    -   Setting an interval and adding a message after a specified time (e.g., 20s) so it simulates the receiver sending a message
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- With the above in mind, I've added sample messages with times that show messages grouped together for the sender (< 20s) and messages which are an hour or more apart (to showing the date timestamp and grouping).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Running the application
+1. Run: npm i
+2. Run: npm run dev
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Improvements/extensions for a production app
+- Locale support using ReactIntl
+- Real-time messaging using WebSockets
+- Light/dark mode
+- Better accessibility for visually-impaired users, screen readers etc
+- Desktop layout (breakpoint)
+- Show visual feedback to use when loading messages (a spinner)
+- Infinite/lazy load scrolling of messages so we are not loading the whole thread. By using the skip and limit values in the data set, we can load what is necessary rather than everything (reducing performance)
