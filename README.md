@@ -25,12 +25,14 @@ The conditions stipulate that messages separated by more than an hour should be 
 1. Run: npm i
 2. Run: npm run dev
 
-
 ### Improvements/extensions for a production app
-- Locale support using ReactIntl
+- Locale support using React Intl
 - Real-time messaging using WebSockets
 - Light/dark mode
 - Better accessibility for visually-impaired users, screen readers etc
-- Desktop layout (breakpoint)
-- Show visual feedback to use when loading messages (a spinner)
+- Desktop layout (breakpoint) - sidebar and main content window. Something like below:
+    ![Desktop view](./assets/desktop-view.png)
+
+- Show visual feedback to user when loading messages (a spinner)
 - Infinite/lazy load scrolling of messages so we are not loading the whole thread. By using the skip and limit values in the data set, we can load what is necessary rather than everything (reducing performance)
+- 
