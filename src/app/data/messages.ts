@@ -45,7 +45,7 @@ export const sampleMessages: TMessage[] = [
     },
     {
         id:"079b2116-2265-81d1-ap4c-c21b10b632fc5",
-        date: new Date("2024-11-27rT14:17:40Z"),
+        date: new Date("2024-11-27T14:17:40Z"),
         name: "You",
         isSender: true,
         content: "I'm a credit manager 💰",
