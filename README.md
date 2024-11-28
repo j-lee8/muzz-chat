@@ -31,8 +31,9 @@ The conditions stipulate that messages separated by more than an hour should be 
 - Light/dark mode
 - Better accessibility for visually-impaired users, screen readers etc
 - Desktop layout (breakpoint) - sidebar and main content window. Something like below:
-    ![Desktop view](./assets/desktop-view.png)
+    ![Desktop view](./public/desktop-view.png)
 
 - Show visual feedback to user when loading messages (a spinner)
 - Infinite/lazy load scrolling of messages so we are not loading the whole thread. By using the skip and limit values in the data set, we can load what is necessary rather than everything (reducing performance)
-- 
+- Break components down further to make them more reusable, cleaner, and easier to test
+- More tests
